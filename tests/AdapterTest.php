@@ -24,10 +24,7 @@ class AdapterTest extends TestCase
         global $BOS_TEST_CONFIG;
         parent::setUp();
         $client = new BosClient($BOS_TEST_CONFIG);
-        if ($this->bucket && $client->doesBucketExist($this->bucket)) {
-            $client->deleteBucket($this->bucket);
-        }
-        $client->createBucket($this->bucket);
+        $this->bucket = $BOS_TEST_CONFIG['bucket'];
         $adapter = new BosAdapter($client,$this->bucket,'');
         $this->filesystem = new Filesystem($adapter);
     }

@@ -1,0 +1,16 @@
+<phpunit
+        colors="true"
+        bootstrap="tests/bootstrap.php"
+        stopOnFailure="false"
+>
+    <testsuites>
+        <testsuite name="My Test Suite">
+            <directory suffix="Test.php">tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name='BOS_KEY' value='' />
+        <env name='BOS_SECRET' value='' />
+        <env name='BOS_BUCKET' value='' />
+    </php>
+</phpunit>
